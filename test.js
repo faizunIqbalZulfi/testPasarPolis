@@ -2,7 +2,7 @@ functions = (arr) => {
     let max
     let secondMax
     for (let i = 0; i < arr.length; i++) {
-        if (!max || max == arr[i] || arr[i] > max) {
+        if (!max || parseInt(max) == parseInt(arr[i]) || parseInt(arr[i]) > parseInt(max)) {
             max = arr[i]
         }
     }
@@ -10,7 +10,7 @@ functions = (arr) => {
         if (arr[i] != max) {
             if (!secondMax) {
                 secondMax = arr[i]
-            } else if (arr[i] > secondMax && arr[i] < max) {
+            } else if (parseInt(arr[i]) > parseInt(secondMax) && parseInt(arr[i]) < parseInt(max)) {
                 secondMax = arr[i]
             }
         }
@@ -21,8 +21,9 @@ functions = (arr) => {
     return secondMax
 }
 
-console.log(functions([]));
+console.log(functions(["111", "22"]));
 // ["3", "-2"]
 // ["5", "5", "4", "2"]
 // ["4", "4", "4", "4"]
 // ['23', '34', '12', '43', '-23', '32', '23', '12']
+
